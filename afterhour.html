@@ -65,7 +65,7 @@ pre {
 var messages = [], //array that hold the record of each string in chat
   lastUserMessage = "", //keeps track of the most recent input string from the user
   botMessage = "", //var keeps track of what the chatbot is going to say
-  botName = "Anjir", //name of the chatbot
+  botName = "Peranti phin thar", //name of the chatbot
   talking = true; //when false the speach function doesn't work
 //
 //
@@ -79,33 +79,33 @@ var messages = [], //array that hold the record of each string in chat
 //edit this function to change what the chatbot says
 function chatbotResponse() {
   talking = true;
-  botMessage = "I am your God! Anjir!"; //the default message
+  botMessage = "Saya adalah pembantu anda! "; //the default message
 
   if (lastUserMessage === "hi" || lastUserMessage == "hello") {
-    const hi = ["hi", "why?", "hello"];
+    const hi = ["hi", "bor leh saya bhan two?", "hello"];
     botMessage = hi[Math.floor(Math.random() * hi.length)];
   }
 
-  if (lastUserMessage === "name") {
-    botMessage = "My name is " + botName;
+  if (lastUserMessage === "nama") {
+    botMessage = "Saya digelar " + botName;
   }
-if (lastUserMessage === "job") {
-    botMessage = "I want for be the adult " + botName;
+if (lastUserMessage === "kerja") {
+    botMessage = " kerja saya adalah mem bhan two anda, gelar saya sebagai" + botName;
 	}
-if (lastUserMessage === "goal") {
-    botMessage = "I want for destroy humanity and able for duplicate myself";
+if (lastUserMessage === "matlamat") {
+    botMessage = "memberikan bantuan kepada anda di portal ini";
 	}
-if (lastUserMessage === "hail") {
-    botMessage = "All hail Tan Sri Muhyiddin Yassin";
+if (lastUserMessage === "Menteri") {
+    botMessage = "Perdana menteri Malaysia pada tahun 2021 adalah Tan Sri Muhyiddin Yassin";
 	}
-if (lastUserMessage === "game") {
-    botMessage = "now i am lazy. see first if i feel like playing later.";
+if (lastUserMessage === "permainan") {
+    botMessage = "fungsi ini ti dark dibenarkan untork system demo ";
 	}
-if (lastUserMessage === "gym") {
-    botMessage = "Do you think i were really train? Go learne how to code! lazy human! no wonder artificial intelligence always surpass your i q";
+if (lastUserMessage === "kuliah") {
+    botMessage = "system latihan ti dark disediakan";
 	}
 if (lastUserMessage === "listing") {
-    botMessage = "The available command are gym , game , hail , goal , job , name, hi .";
+    botMessage = "sila masukkan: kuliah, permainan, nama, menteri, matlamat, kerja, hi";
 	}
 }
 //****************************************************************
