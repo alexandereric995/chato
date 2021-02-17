@@ -1,6 +1,9 @@
 <html>
+	<title>MIB</title>
+	<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Jata_MalaysiaV2.svg/250px-Jata_MalaysiaV2.svg.png"/>
 <head>
-<style>body {
+<style>
+body {
   font: 15px arial, sans-serif;
   background-color: #000000;
   padding-top: 15px;
@@ -24,7 +27,7 @@
 
 #chatborder {
   border-style: solid;
-  background-color: #ff0000;
+  background-color: #808080;
   border-width: 3px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -36,7 +39,30 @@
   padding-left: 15px;
   border-radius: 15px;
 }
+.logo {
+  position: absolute;
+  top: 24px;
+  right: -16px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: -1px 0 1px #111;
+  text-align: center;
+}
 
+.logo-first {
+  font-size: 19px;
+  letter-spacing: 2px;
+  color: #666;
+  border: 1px solid #383838;
+  border-radius: 4px;
+  padding: 3px 5px 1px;
+}
+
+.logo-second {
+  letter-spacing: 3px;
+  font-size: 14px;
+  color: #555;
+  margin-top: 2px;
+}
 .chatlog {
   font: 15px arial, sans-serif;
 }
@@ -65,7 +91,7 @@ pre {
 var messages = [], //array that hold the record of each string in chat
   lastUserMessage = "", //keeps track of the most recent input string from the user
   botMessage = "", //var keeps track of what the chatbot is going to say
-  botName = "Anji ier", //name of the chatbot
+  botName = "Peranti phin thar", //name of the chatbot
   talking = true; //when false the speach function doesn't work
 //
 //
@@ -79,16 +105,34 @@ var messages = [], //array that hold the record of each string in chat
 //edit this function to change what the chatbot says
 function chatbotResponse() {
   talking = true;
-  botMessage = "I am your God! Anji ier!"; //the default message
+  botMessage = "Saya adalah pembantu anda! "; //the default message
 
   if (lastUserMessage === "hi" || lastUserMessage == "hello") {
-    const hi = ["hi", "why?", "hello"];
+    const hi = ["hi", "bor leh saya bhan two?", "hello"];
     botMessage = hi[Math.floor(Math.random() * hi.length)];
   }
 
-  if (lastUserMessage === "name") {
-    botMessage = "My name is " + botName;
+  if (lastUserMessage === "nama") {
+    botMessage = "Saya digelar " + botName;
   }
+if (lastUserMessage === "kerja") {
+    botMessage = " kerja saya adalah mem bhan two anda, gelar saya sebagai " + botName;
+	}
+if (lastUserMessage === "matlamat") {
+    botMessage = "memberikan bantuan kepada anda di portal ini";
+	}
+if (lastUserMessage === "menteri") {
+    botMessage = "Perdana menteri Malaysia pada tahun dua ribu dua puluh satu adalah Tan Seri Muhyiddin Yassin";
+	}
+if (lastUserMessage === "permainan") {
+    botMessage = "fungsi ini tidak dibenarkan untuk system demo.";
+	}
+if (lastUserMessage === "kuliah") {
+    botMessage = "system latihan ti dark disediakan";
+	}
+if (lastUserMessage === "listing") {
+    botMessage = "sila masukkan: kuliah, permainan, nama, menteri, matlamat, kerja, hi. Taipkan dengan huruf kecil sahaja";
+	}
 }
 //****************************************************************
 //****************************************************************
@@ -166,10 +210,27 @@ function placeHolder() {
 }
 
 </script>
+<script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
 </head>
 <body>
 <div id='bodybox'>
-  <div id='chatborder'>
+  <div id='chatborder' content="logo"><div class="logo" div class="logo-first"></div>
+    <div class="logo-second"><h1><center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Jata_MalaysiaV2.svg/250px-Jata_MalaysiaV2.svg.png" width="35" height="35"/> MALAYSIA A.I </h1></center></div>
+</div>
     <p id="chatlog7" class="chatlog">&nbsp;</p>
     <p id="chatlog6" class="chatlog">&nbsp;</p>
     <p id="chatlog5" class="chatlog">&nbsp;</p>
@@ -177,7 +238,7 @@ function placeHolder() {
     <p id="chatlog3" class="chatlog">&nbsp;</p>
     <p id="chatlog2" class="chatlog">&nbsp;</p>
     <p id="chatlog1" class="chatlog">&nbsp;</p>
-    <input type="text" name="chat" id="chatbox" placeholder="Type Command: Name, Hi, and more. Algorithm Shall Be Update!" onfocus="placeHolder()">
+    <input type="text" name="chat" id="chatbox" placeholder="Taipkan listing (huruf kecil) di sini. . ." onfocus="placeHolder()">
   </div>
   </body>
 </html>
